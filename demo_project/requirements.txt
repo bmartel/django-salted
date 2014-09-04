@@ -1,3 +1,0 @@
-#-*- mode: conf -*-
-Django==1.5.1
-psycopg2

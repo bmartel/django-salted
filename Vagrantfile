@@ -3,9 +3,8 @@ require 'etc'
 
 Vagrant.configure("2") do |config|
   config.vm.define :web do |web|
-    # Ubuntu 12.04
-    web.vm.box = "precise64"
-    web.vm.box_url = "http://files.vagrantup.com/precise64.box"
+    # Ubuntu 14.04
+    web.vm.box = "ubuntu/trusty64"
 
     # Network
     web.vm.hostname = "vagrant.django-salted.org"
@@ -20,7 +19,7 @@ Vagrant.configure("2") do |config|
 
       # Show the output of salt
       salt.verbose = true
-      
+
       # Pre-distribute these keys on our local installation
       salt.minion_key = "salt/keys/vagrant.django-salted.org.pem"
       salt.minion_pub = "salt/keys/vagrant.django-salted.org.pub"
