@@ -5,10 +5,12 @@ Vagrant.configure("2") do |config|
   config.vm.define :web do |web|
     # Ubuntu 14.04
     web.vm.box = "ubuntu/trusty64"
+    #web.vm.box_url = "https://vagrantcloud.com/ubuntu/trusty64/version/1/provider/virtualbox.box"
 
     # Network
     web.vm.hostname = "vagrant.django-salted.org"
-    web.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
+    web.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+    #web.vm.network "private_network", ip: "192.168.50.4"
 
     # Share for masterless server
     web.vm.synced_folder "salt/roots/", "/srv/"

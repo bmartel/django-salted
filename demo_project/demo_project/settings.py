@@ -22,7 +22,7 @@ SECRET_KEY = 'x%kie%)nb0mi$*i9ggbmt(hfiop#rjq!ysj(4liqf&x(v^ztyk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ALLOWED_HOSTS = []
 
@@ -58,18 +58,12 @@ WSGI_APPLICATION = 'demo_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'example_db',
+        'USER': 'example_user',
+        'PASSWORD': 'example_password',
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'example_db',
-#         'USER': 'example_user',
-#         'PASSWORD': 'example_password',
-#     }
-# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
